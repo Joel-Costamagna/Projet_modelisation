@@ -8,9 +8,11 @@
 
 namespace User\Controller;
 
+use User\Model\User;
+
 class UserController {
 
-	public function create($user_type) {
+	public function create($user_type): User {
 		$name = $_POST['name'] ?? 'Robert';
 		try {
 			$user = \User\UserFactory::build($user_type, $name);

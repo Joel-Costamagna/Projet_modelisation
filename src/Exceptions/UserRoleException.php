@@ -3,14 +3,23 @@
  * Created by PhpStorm.
  * User: joelcostamagna
  * Date: 2018-04-12
- * Time: 19:38
+ * Time: 19:28
  */
 
-class UserRoleException {
+namespace User;
 
-	/**
-	 * UserRoleException constructor.
-	 * @param string $string
-	 */
-	public function __construct($string) { }
+use Exception;
+
+class UserRoleException extends Exception {
+
+	public function __construct($message, $code = 0, Exception $previous = null) {
+
+
+		parent::__construct($message, $code, $previous);
+	}
+
+	// chaîne personnalisée représentant l'objet
+	public function __toString() {
+		return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
+	}
 }
