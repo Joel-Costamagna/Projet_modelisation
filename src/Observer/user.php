@@ -1,5 +1,5 @@
 <?php
-class userRegistrer{
+class user{
     private $nom;
     private $prenom;
     private $mail;
@@ -14,15 +14,15 @@ class userRegistrer{
     public function affecte($donnees){
         foreach ($donnees as $attribut => $valeur){
             switch ($attribut){
-                case 'user_nom' : $this->setNomPersonne($valeur);
+                case 'user_nom' : $this->setNomUser($valeur);
                 break;
-                case 'user_prenom' : $this->setPrenomPersonne($valeur);
+                case 'user_prenom' : $this->setPrenomUser($valeur);
                 break;
-                case 'user_mail' : $this->setMailPersonne($valeur);
+                case 'user_mail' : $this->setMailUser($valeur);
                 break;
-                case 'user_login' : $this->setLoginPersonne($valeur);
+                case 'user_login' : $this->setLoginUser($valeur);
                 break;
-                case 'user_pwd' : $this->setPwdPersonne($valeur);
+                case 'user_pwd' : $this->setPwdUser($valeur);
                 break;
             }
         }

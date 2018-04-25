@@ -1,14 +1,14 @@
 <?php
-require('model/Observee.php');
-require('model/userRegistrer.php');
+require('Observer/Observee.php');
+require('Observer/user.php');
 require('Observer/RegistrerViewValidation.php');
+require('Observer/MailSender.php');
 require('Observer/BDDWriterNewUser.php');
-require('model/connect.php');
 
-$db = connectDb();
 $o = new observee; // Nous créons un nouveau gestionnaire d'erreur.
 
-$o->attach(new RegistrerViewValidation('TEST DE MERDE'))
+$o->attach(new RegistrerViewValidation('TEST DE MERDE'));
+$o->attach(new MailSender());
 ?>
 ?>
 
@@ -74,13 +74,12 @@ $o->attach(new RegistrerViewValidation('TEST DE MERDE'))
 	
 	<?php }
 	else{
-		$user = new userRegistrer(array( 'per_nom' => $_POST['nom'],
-                 'per_prenom' => $_POST['prenom'],
-                 'per_mail' => $_POST['email'],
-                 'per_login' => $_POST['pseudo'],
-                 'per_pwd' => $_POST['password']));
+		$user = new user(array( 'user_nom' => $_POST['nom'],
+                 'user_prenom' => $_POST['prenom'],
+                 'user_mail' => $_POST['email'],
+                 'user_login' => $_POST['pseudo'],
+                 'user_pwd' => $_POST['password']));
 				 
-	
 	
 	$o->register($user);
 	}?>
