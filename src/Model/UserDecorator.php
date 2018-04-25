@@ -10,18 +10,19 @@
 
 namespace User\Model;
 
-use User\IRole;
-
 abstract class UserDecorator implements IRole
 {
-    protected $userDecorate = null;
+    protected $userDecorate;
 
     public function __construct(IRole $decorate)
     {
         $this->userDecorate = $decorate;
     }
 
-    abstract function Role();
+    public function Role()
+    {
+        $this->userDecorate->Role();
+    }
 
 
 }

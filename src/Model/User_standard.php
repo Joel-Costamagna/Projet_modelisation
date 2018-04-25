@@ -10,6 +10,7 @@ namespace User\Model;
 
 require('User.php');
 require('IRole.php');
+require('StandardDecorator.php');
 
 class User_standard implements User, IRole
 {
@@ -21,12 +22,15 @@ class User_standard implements User, IRole
         $this->email = $mail;
         $this->login = $login;
         $this->password = $password;
+        //standard stuff
+        $role = new StandardDecorator($this);
+        $role->Role();
     }
 
 
     public function Role()
     {
-        echo "  Ajout du rôle par défaut";
+        echo "  Ajout du rôle : ";
     }
 
 

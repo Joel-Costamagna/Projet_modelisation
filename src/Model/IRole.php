@@ -10,6 +10,5 @@ namespace User\Model;
 
 interface IRole
 {
-
     function Role();
 }

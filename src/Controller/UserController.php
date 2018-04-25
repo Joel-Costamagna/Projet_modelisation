@@ -25,7 +25,7 @@ class UserController {
 
 		$database = Db::connectDb();
 		$this->o = new observee; // Nous créons un nouveau gestionnaire d'erreur.
-		$this->o->attach(new RegistrerViewValidation('TEST DE MERDE'));
+        $this->o->attach(new RegistrerViewValidation(' Votre enregistrement a bien ete pris en compte <3'));
 		$this->o->attach(new BDDWriterNewUser($database));
 	}
 
@@ -42,7 +42,6 @@ class UserController {
 			echo "erreur : $e";
 		}
 		$this->o->register($user);
-
 		return $user;
 	}
 }

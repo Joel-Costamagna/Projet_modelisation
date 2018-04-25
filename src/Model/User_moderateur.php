@@ -7,13 +7,14 @@
  */
 
 namespace User\Model;
-
 require('IRole.php');
+require('ModerateurDecorator.php');
+
 class User_moderateur implements User, IRole {
 
     public function Role()
     {
-        echo "  Ajout du rôle modérateur";
+        echo "  Ajout du rôle : ";
     }
 
     public function __construct($name, $prenom, $mail, $login, $password) {
@@ -23,6 +24,8 @@ class User_moderateur implements User, IRole {
         $this->login = $login;
         $this->password = $password;
         //modo stuff;
+        $role = new ModerateurDecorator($this);
+        $role->Role();
     }
 
     /**
