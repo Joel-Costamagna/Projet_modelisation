@@ -12,13 +12,13 @@
                 <!-- .nav, .navbar-search, .navbar-form, etc -->
 
                 <ul class="nav">
-                    <li class="active"><a href="/forum">Acceuil</a></li>
-                    <li class="divider-vertical"><a href="index.php?page=actualiteView">Actualites</a></li>
-                    <li class="divider-vertical"><a href="index.php?page=evenementsView">Evenements</a></li>
+                    <li class="active"><a href="/forum">Accueil</a></li>
+                    <li class="divider-vertical"><a href="index.php?page=actualiteView">Actualités</a></li>
+                    <li class="divider-vertical"><a href="index.php?page=evenementsView">Évènements</a></li>
                     <li class="divider-vertical"><a href="index.php?page=associationView">L'association</a></li>
                     <li class="divider-vertical"><a href="index.php?page=galerieView">Galerie</a></li>
                     <li class="divider-vertical"><a href="index.php?page=devenirMembreView">Devenir membre</a></li>
-                    <li class="divider-vertical"><a href="index.php?page=login">Sign in</a></li>
+                    <li class="divider-vertical"><a href="index.php?page=login">Connexion</a></li>
                 </ul>
             </div>
 

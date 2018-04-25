@@ -18,20 +18,25 @@ class UserFactory {
 	 * @param string $user_type le type d'utilisateur (ex admin, moderateur, …)
 	 * @param string $name      le username de l'utilisateur
 	 * @return Model\User
-	 * @throws \User\UserTypeException
-	 * @throws \User\UserRoleException
+	 * @throws \Exception
 	 */
-	public static function build(string $user_type, string $name): User {
+	public static function build(
+		string $user_type, string $name, string $prenom, string $mail, string $pseudo, string $password): User {
 		$user = "User_" . strtolower($user_type);
-
+		if ( ! file_exists($chemin = "Model/" . $user . '.php')) {
+			throw new \Exception("file $chemin does not exists");
+		}
+		$classe = "\User\Model\\$user";
+		require $chemin;
+		if ( ! class_exists($classe)) {
+			{
+				throw new \Exception("class $classe does not exists at $chemin");
+			}
+		}
+		/*
 		if ($user_type != "standard" && self::$role_quantite[$user_type] > 10) {
-			throw new UserRoleException("there is already 10 $user_type");
-		}
-
-		if (class_exists($user)) {
-			return new $user($name);
-		} else {
-			throw new UserTypeException("invalid user type $user_type");
-		}
+			throw new \Exception("there is already 10 $user_type");
+		}*/
+		return new $classe($name, $prenom, $mail, $pseudo, $password);
 	}
 }

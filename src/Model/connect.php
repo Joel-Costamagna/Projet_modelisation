@@ -1,7 +1,10 @@
-<?php  
+<?php
+
 // A editer par joel je crois
-function connectDb() {
-  $bdd = new PDO('mysql:host=localhost;dbname=forum;charset=utf8', 'root', '');
-  return $bdd;
+class Db {
+	static function connectDb() {
+		$bdd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=forum;charset=utf8;', 'root', 'root');
+		return $bdd;
+	}
+
 }
-?>
