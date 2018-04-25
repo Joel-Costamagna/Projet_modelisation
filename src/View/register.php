@@ -1,23 +1,6 @@
-<?php
-require('Observer/Observee.php');
-require('Observer/user.php');
-require('Observer/RegistrerViewValidation.php');
-require('Observer/MailSender.php');
-require('Observer/BDDWriterNewUser.php');
-
-
-$db = connectDb();
-$o = new observee; // Nous créons un nouveau gestionnaire d'erreur.
-
-$o->attach(new RegistrerViewValidation('TEST DE MERDE'));
-//$o->attach(new MailSender());
-$o->attach(new BDDWriterNewUser($db));
-?>
-
-<?php if ((empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['pseudo']) || empty
-	($_POST['password']))): ?>
+<?php require_once("Controller/UserController.php") ?>
 <div class="myForm" style="display: flex; justify-content: center;">
-    <form class="form-horizontal" id="form" method="post" action="">
+    <form class="form-horizontal" id="form" method="post" action="index.php?page=submit">
 
         <!-- champs pour NOM -->
         <div class="control-group">
@@ -73,10 +56,4 @@ $o->attach(new BDDWriterNewUser($db));
         </div>
     </form>
 
-	<?php else:
-		$user = \User\UserFactory::build(
-		                 );
-
-		$o->register($user);
-	endif; ?>
 </div>

@@ -8,6 +8,8 @@
 
 namespace User\Model;
 
+require('User.php');
+
 class User_standard implements User {
 
 	public function __construct($name, $prenom, $mail, $login, $password) {
@@ -16,5 +18,40 @@ class User_standard implements User {
 		$this->email = $mail;
 		$this->login = $login;
 		$this->password = $password;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getEmail() {
+		return $this->email;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getLogin() {
+		return $this->login;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getName() {
+		return $this->name;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getPassword() {
+		return $this->password;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getPrenom() {
+		return $this->prenom;
 	}
 }

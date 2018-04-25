@@ -1,7 +1,7 @@
 <?php
 require('model/connect.php');
 
-$db = connectDb();
+$db = Db::connectDb();
 
 if (isset($_GET['page'])) {
 	$page = htmlentities($_GET['page']);
