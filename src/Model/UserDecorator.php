@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Created by PhpStorm.
  * User: NathanVoizeux
@@ -10,19 +9,16 @@
 
 namespace User\Model;
 
-abstract class UserDecorator implements IRole
-{
-    protected $userDecorate;
+abstract class UserDecorator implements IRole {
+	protected $userDecorate;
 
-    public function __construct(IRole $decorate)
-    {
-        $this->userDecorate = $decorate;
-    }
+	public function __construct(IRole $decorate) {
+		$this->userDecorate = $decorate;
+	}
 
-    public function Role()
-    {
-        $this->userDecorate->Role();
-    }
+	public function Role() {
+		$this->userDecorate->Role();
+	}
 
 
 }

@@ -7,4 +7,4 @@
  */
 require_once('Controller/UserController.php');
 $userController = new \User\Controller\UserController;
-$user = $userController->create("standard");
+$user = $userController->create("admin");

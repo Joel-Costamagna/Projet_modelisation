@@ -6,9 +6,8 @@
  * Time: 15:10
  */
 
-namespace User\Model;
+namespace User;
+interface IRole {
 
-interface IRole
-{
-    function Role();
+	function Role();
 }
