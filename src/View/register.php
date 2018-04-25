@@ -5,10 +5,13 @@ require('Observer/RegistrerViewValidation.php');
 require('Observer/MailSender.php');
 require('Observer/BDDWriterNewUser.php');
 
+
+$db = connectDb();
 $o = new observee; // Nous créons un nouveau gestionnaire d'erreur.
 
 $o->attach(new RegistrerViewValidation('TEST DE MERDE'));
-$o->attach(new MailSender());
+//$o->attach(new MailSender());
+$o->attach(new BDDWriterNewUser($db));
 ?>
 ?>
 
