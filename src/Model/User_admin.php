@@ -8,12 +8,13 @@
 
 namespace User\Model;
 
-use User\IRole;
-
 require('IRole.php');
+
 require('User.php');
+require('AdminDecorator.php');
 
 class User_admin implements User, IRole {
+
 
 	public function __construct($name, $prenom, $mail, $login, $password) {
 
@@ -24,6 +25,8 @@ class User_admin implements User, IRole {
 		$this->login = $login;
 		$this->password = $password;
 		//admin stuff;
+		$role = new AdminDecorator($this);
+		$role->Role();
 	}
 
 	public function Role() {
@@ -65,5 +68,4 @@ class User_admin implements User, IRole {
 	public function getPrenom() {
 		return $this->prenom;
 	}
-
 }

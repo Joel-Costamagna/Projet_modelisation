@@ -8,19 +8,26 @@
 
 namespace User\Model;
 
+require('UserDecorator.php');
 
 class AdminDecorator extends UserDecorator
 {
     private $name;
 
+    public function __construct(User_admin $decorate)
+    {
+        $this->name = $decorate->name;
+        parent::__construct($decorate);
+    }
+
     public function Role()
     {
-        $this->afficheAdmin();
         $this->userDecorate->Role();
+        $this->afficheAdmin();
     }
 
     public function afficheAdmin()
     {
-        echo(' Admin : ' . $this->name . '');
+        echo(' Admin pour ' . $this->name . '');
     }
 }
