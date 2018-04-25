@@ -1,8 +1,20 @@
-<?
-// faire le traitement du formulaire
+<?php
+require('model/Observee.php');
+require('model/userRegistrer.php');
+require('Observer/RegistrerViewValidation.php');
+require('Observer/BDDWriterNewUser.php');
+require('model/connect.php');
+
+$db = connectDb();
+$o = new observee; // Nous créons un nouveau gestionnaire d'erreur.
+
+$o->attach(new RegistrerViewValidation('TEST DE MERDE'))
+?>
 ?>
 
-
+<?php
+    if ((empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['pseudo']) || empty($_POST['password'])) ){
+    ?>
 <div class="myForm" style="display: flex; justify-content: center;">
     <form class="form-horizontal" id="form" method="post" action="">
 
@@ -23,16 +35,6 @@
             </div>
         </div>
         <!-- Fin champs PRENOM -->
-
-        <!-- champs pour ANNIVERSAIRE -->
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">DATE DE NAISSANCE</label>
-            <div class="controls">
-                <input type="date" id="inputEmail" placeholder="Votre date de naissance" name="anniversaire"
-                       required="required">
-            </div>
-        </div>
-        <!-- Fin champs ANNIVERSAIRE -->
 
         <!-- champs pour PSEUDO -->
         <div class="control-group">
@@ -69,4 +71,17 @@
             </div>
         </div>
     </form>
+	
+	<?php }
+	else{
+		$user = new userRegistrer(array( 'per_nom' => $_POST['nom'],
+                 'per_prenom' => $_POST['prenom'],
+                 'per_mail' => $_POST['email'],
+                 'per_login' => $_POST['pseudo'],
+                 'per_pwd' => $_POST['password']));
+				 
+	
+	
+	$o->register($user);
+	}?>
 </div>
