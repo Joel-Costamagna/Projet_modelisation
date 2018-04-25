@@ -9,5 +9,12 @@
 namespace User\Model;
 
 class User_moderateur implements User {
-	public function __construct($name) { $this->name = $name; }
+	public function __construct($name, $prenom, $mail, $login, $password) {
+		$this->name = $name;
+		$this->prenom = $prenom;
+		$this->email = $mail;
+		$this->login = $login;
+		$this->password = $password;
+		//modo stuff;
+	}
 }

@@ -10,8 +10,11 @@ namespace User\Model;
 
 class User_standard implements User {
 
-	public function __construct($name) {
+	public function __construct($name, $prenom, $mail, $login, $password) {
 		$this->name = $name;
-		//TODO admmin specific stuff
+		$this->prenom = $prenom;
+		$this->email = $mail;
+		$this->login = $login;
+		$this->password = $password;
 	}
 }

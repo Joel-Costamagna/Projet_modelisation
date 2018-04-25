@@ -10,5 +10,5 @@ namespace User\Model;
 
 interface User {
 
-	function __construct($name);
+	function __construct($name, $prenom, $mail, $login, $password);
 }

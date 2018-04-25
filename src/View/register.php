@@ -10,11 +10,9 @@ $o = new observee; // Nous créons un nouveau gestionnaire d'erreur.
 $o->attach(new RegistrerViewValidation('TEST DE MERDE'));
 $o->attach(new MailSender());
 ?>
-?>
 
-<?php
-    if ((empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['pseudo']) || empty($_POST['password'])) ){
-    ?>
+<?php if ((empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['pseudo']) || empty
+	($_POST['password']))): ?>
 <div class="myForm" style="display: flex; justify-content: center;">
     <form class="form-horizontal" id="form" method="post" action="">
 
@@ -71,16 +69,11 @@ $o->attach(new MailSender());
             </div>
         </div>
     </form>
-	
-	<?php }
-	else{
-		$user = new user(array( 'user_nom' => $_POST['nom'],
-                 'user_prenom' => $_POST['prenom'],
-                 'user_mail' => $_POST['email'],
-                 'user_login' => $_POST['pseudo'],
-                 'user_pwd' => $_POST['password']));
-				 
-	
-	$o->register($user);
-	}?>
+
+	<?php else:
+		$user = \User\UserFactory::build(
+		                 );
+
+		$o->register($user);
+	endif; ?>
 </div>
