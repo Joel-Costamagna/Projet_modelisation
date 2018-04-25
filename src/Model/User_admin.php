@@ -8,10 +8,18 @@
 
 namespace User\Model;
 
-class User_admin implements User {
+use User\IRole;
+
+class User_admin implements User, IRole
+{
 
 	public function __construct($name) {
 		$this->name = $name;
 		//TODO admmin specific stuff
 	}
+
+    public function Role()
+    {
+        // TODO: Implement Role() method specific standard stuff.
+    }
 }

@@ -12,6 +12,12 @@ class User_standard implements User {
 
 	public function __construct($name) {
 		$this->name = $name;
-		//TODO admmin specific stuff
-	}
+
+
+    }
+
+    public function Role()
+    {
+        // TODO: Implement Role() method specific admin stuff.
+    }
 }

@@ -10,4 +10,9 @@ namespace User\Model;
 
 class User_moderateur implements User {
 	public function __construct($name) { $this->name = $name; }
+
+    public function Role()
+    {
+        // TODO: Implement Role() method specific modo stuff.
+    }
 }

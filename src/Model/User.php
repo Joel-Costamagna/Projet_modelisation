@@ -11,4 +11,5 @@ namespace User\Model;
 interface User {
 
 	function __construct($name);
+
 }
