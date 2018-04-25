@@ -9,6 +9,6 @@ class MailSender implements SplObserver
   
   public function update(SplSubject $obj)
   {
-    mail($obj->getUser()->getMailUser(), 'confirmation enregistrement !', 'Vous etes bien enregistrer : ', 'From: bababoims87@gmail.com');
+    mail($obj->getUser()->getMailUser(), 'confirmation enregistrement !', 'Vous etes bien enregistrer : ', 'From: ');
   }
 }
