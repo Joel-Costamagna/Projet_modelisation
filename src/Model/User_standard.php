@@ -9,57 +9,64 @@
 namespace User\Model;
 
 require('User.php');
+require('IRole.php');
 
-class User_standard implements User, IRole {
+class User_standard implements User, IRole
+{
 
-	public function __construct($name, $prenom, $mail, $login, $password) {
-		$this->name = $name;
+    public function __construct($name, $prenom, $mail, $login, $password)
+    {
+        $this->name = $name;
         $this->prenom = $prenom;
         $this->email = $mail;
         $this->login = $login;
         $this->password = $password;
     }
 
-    }
 
     public function Role()
     {
-        // TODO: Implement Role() method specific admin stuff.
+        echo "  Ajout du rôle par défaut";
     }
 
 
-	/**
-	 * @return mixed
-	 */
-	public function getEmail() {
-		return $this->email;
-	}
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getLogin() {
-		return $this->login;
-	}
+    /**
+     * @return mixed
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getPassword() {
-		return $this->password;
-	}
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getPrenom() {
-		return $this->prenom;
-	}
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
 }
