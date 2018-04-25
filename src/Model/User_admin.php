@@ -5,20 +5,16 @@
  * Date: 2018-04-12
  * Time: 19:25
  */
+
 namespace User\Model;
 
 use User\IRole;
 
 require('IRole.php');
+require('User.php');
 
-class User_admin implements User, IRole
-{
+class User_admin implements User, IRole {
 
-    public function Role()
-    {
-
-        echo "  Ajout du rôle admin";
-    }
 	public function __construct($name, $prenom, $mail, $login, $password) {
 
 
@@ -28,6 +24,11 @@ class User_admin implements User, IRole
 		$this->login = $login;
 		$this->password = $password;
 		//admin stuff;
+	}
+
+	public function Role() {
+
+		echo "  Ajout du rôle admin";
 	}
 
 	/**

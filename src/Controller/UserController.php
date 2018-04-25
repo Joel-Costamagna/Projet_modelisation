@@ -42,7 +42,6 @@ class UserController {
 			echo "erreur : $e";
 		}
 		$this->o->register($user);
-
 		return $user;
 	}
 }
