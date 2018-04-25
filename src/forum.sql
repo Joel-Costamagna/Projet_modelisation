@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 25 avr. 2018 à 00:22
--- Version du serveur :  10.1.31-MariaDB
--- Version de PHP :  7.2.3
+-- Généré le :  jeu. 26 avr. 2018 à 00:11
+-- Version du serveur :  10.1.30-MariaDB
+-- Version de PHP :  7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,7 +32,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nom` text NOT NULL,
   `prenom` text NOT NULL,
-  `date_de_naissance` date NOT NULL,
   `login` text NOT NULL,
   `password` text NOT NULL,
   `email` text NOT NULL
@@ -56,7 +55,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
