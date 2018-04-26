@@ -10,26 +10,22 @@ namespace User\Model;
 
 require('UserDecorator.php');
 
-class StandardDecorator extends UserDecorator
-{
-    private $name;
+class StandardDecorator extends UserDecorator {
+	private $name;
 
-    public function __construct(User_standard $decorate)
-    {
-        $this->name = $decorate->name;
-        parent::__construct($decorate);
-    }
+	public function __construct(User_standard $decorate) {
+		$this->name = $decorate->name;
+		parent::__construct($decorate);
+	}
 
-    public function Role()
-    {
-        $this->userDecorate->Role();
-        $this->afficheStandard();
-    }
+	public function Role() {
+		$this->userDecorate->Role();
+		$this->afficheStandard();
+	}
 
-    public function afficheStandard()
-    {
-        echo(' Utilisateur pour ' . $this->name . '');
-    }
+	public function afficheStandard() {
+		echo(' Utilisateur pour ' . $this->name . '');
+	}
 
 
 }

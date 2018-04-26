@@ -10,24 +10,20 @@ namespace User\Model;
 
 require('UserDecorator.php');
 
-class AdminDecorator extends UserDecorator
-{
-    private $name;
+class AdminDecorator extends UserDecorator {
+	private $name;
 
-    public function __construct(User_admin $decorate)
-    {
-        $this->name = $decorate->name;
-        parent::__construct($decorate);
-    }
+	public function __construct(User_admin $decorate) {
+		$this->name = $decorate->name;
+		parent::__construct($decorate);
+	}
 
-    public function Role()
-    {
-        $this->userDecorate->Role();
-        $this->afficheAdmin();
-    }
+	public function Role() {
+		$this->userDecorate->Role();
+		$this->afficheAdmin();
+	}
 
-    public function afficheAdmin()
-    {
-        echo(' Admin pour ' . $this->name . '');
-    }
+	public function afficheAdmin() {
+		echo(' Admin pour ' . $this->name . '<br/>');
+	}
 }

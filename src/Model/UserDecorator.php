@@ -9,6 +9,8 @@
 
 namespace User\Model;
 
+use User\IRole;
+
 abstract class UserDecorator implements IRole {
 	protected $userDecorate;
 

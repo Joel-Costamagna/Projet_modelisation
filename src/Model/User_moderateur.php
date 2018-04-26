@@ -8,6 +8,8 @@
 
 namespace User\Model;
 
+use User\IRole;
+
 require('IRole.php');
 require('User.php');
 require('ModerateurDecorator.php');

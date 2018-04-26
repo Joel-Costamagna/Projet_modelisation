@@ -9,6 +9,5 @@ class RegistrerViewValidation implements SplObserver {
 
 	public function update(SplSubject $obj) {
 		echo $this->text;
-		$obj->getUser()->Role();
 	}
 }

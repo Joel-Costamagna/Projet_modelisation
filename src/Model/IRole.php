@@ -7,6 +7,7 @@
  */
 
 namespace User;
+
 interface IRole {
 
 	function Role();

@@ -8,6 +8,8 @@
 
 namespace User\Model;
 
+use User\IRole;
+
 require('IRole.php');
 
 require('User.php');
@@ -31,7 +33,7 @@ class User_admin implements User, IRole {
 
 	public function Role() {
 
-		echo "  Ajout du rôle admin";
+		echo "Ajout du rôle : ";
 	}
 
 	/**
